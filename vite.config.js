@@ -1,4 +1,6 @@
-import { defineConfig } from 'vite'
+import {
+  defineConfig
+} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import fs from 'fs'
@@ -6,15 +8,20 @@ import externalGlobals from "rollup-plugin-external-globals"
 // https://vitejs.dev/config/
 
 const FILE_NAME = "main.user.js";
-const headerText = fs.readFileSync("./src/header.js").toString()
-export default ({mode}) => {
+const headerText = fs.readFileSync("./src/header.js").toString();
+const setipText = fs.readFileSync("./src/setup.js").toString()
+
+export default ({
+  mode
+}) => {
   return defineConfig({
     plugins: [
       vue(),
       externalGlobals({
         vue: "Vue",
       }),
-      header(headerText, mode==="dev")
+      header(setipText, false),
+      header(headerText, mode === "dev")
     ],
     build: {
       outDir: "dist",
@@ -33,11 +40,11 @@ export default ({mode}) => {
   })
 }
 
-function header(text, dev=true) {
+function header(text, dev = true) {
   return {
     name: "vite-plugin-header",
     generateBundle(OutputOptions, ChunkInfo) {
-      let filename =  String(OutputOptions.name).replace("dist/", "");
+      let filename = String(OutputOptions.name).replace("dist/", "");
       let newCode = text + "\n" + ChunkInfo[filename].code;
       ChunkInfo[filename].code = newCode;
       if (dev) {

@@ -6,7 +6,12 @@
 // @version      2023.04.12.01
 // @author       小淳
 // @match        *://buff.163.com/goods*
+// @match        *://www.youpin898.com/goodInfo*
+// @match        *://www.igxe.cn/product/730*
+// @match        *://www.c5game.com/csgo/*
 // @require      https://lib.baomitu.com/vue/3.2.47/vue.global.prod.min.js
+// @require      https://cdn.jsdelivr.net/npm/notice.js@0.4.0/dist/notice.js
 // @run-at       document-start
 // @grant        unsafeWindow
+// @grant        GM_openInTab
 // ==/UserScript==

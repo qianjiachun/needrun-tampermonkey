@@ -1,0 +1,32 @@
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.needrun-text-color {
+  background: linear-gradient(to right, rgb(47, 112, 193), rgb(116, 97, 195));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.needrun-chat-btn:hover {
+  scale: 1.2;
+}
+
+.needrun-chat-btn {
+  transition: all 0.3s;
+}
