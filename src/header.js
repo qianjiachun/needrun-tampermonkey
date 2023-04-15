@@ -13,4 +13,5 @@
 // @run-at       document-start
 // @grant        unsafeWindow
 // @grant        GM_openInTab
+// @license      MIT
 // ==/UserScript==
